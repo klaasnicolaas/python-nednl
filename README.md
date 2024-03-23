@@ -33,11 +33,13 @@ pip install nednl
 
 ### API Key
 
-To use the datasets, you must first create an account on their website, then you can generate an API key. Currently there is a limit of 200 requests per 5 minutes.
+To use the datasets, you must first create an account on their website, then you can generate an API key.
 
 ## Datasets
 
 <!-- TODO: Add a list of datasets that are supported by this package. -->
+
+Currently there is a limit of 200 requests per 5 minutes.
 
 ### Example
 
