@@ -6,7 +6,7 @@ author_name: Klaas Schoute
 github_sponsors: true
 github_username: klaasnicolaas
 package_name: nednl
-project_name: Nationaal Energie Dashboard NL
+project_name: National Energy Dashboard NL
 project_short_description: ''
 project_slug: nednl
 run_poetry_install: false

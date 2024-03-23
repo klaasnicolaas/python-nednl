@@ -1,0 +1,28 @@
+# serializer version: 1
+# name: test_points_data
+  list([
+    Point(point_id=0, name='Nederland', nameshort='NL'),
+    Point(point_id=1, name='Groningen', nameshort='Gr'),
+    Point(point_id=2, name='Friesland', nameshort='Fr'),
+    Point(point_id=3, name='Drenthe', nameshort='Dr'),
+    Point(point_id=4, name='Overijssel', nameshort='Ov'),
+    Point(point_id=5, name='Flevoland', nameshort='FL'),
+    Point(point_id=6, name='Gelderland', nameshort='Ge'),
+    Point(point_id=7, name='Utrecht', nameshort='Ut'),
+    Point(point_id=8, name='Noord-Holland', nameshort='No'),
+    Point(point_id=9, name='Zuid-Holland', nameshort='Zu'),
+    Point(point_id=10, name='Zeeland', nameshort='Ze'),
+    Point(point_id=11, name='Noord-Brabant', nameshort='Nb'),
+    Point(point_id=12, name='Limburg', nameshort='Li'),
+    Point(point_id=13, name='Eilanden', nameshort='Ei'),
+    Point(point_id=28, name='Windpark Luchterduinen', nameshort='WPlu'),
+    Point(point_id=29, name='Windpark Princes Amalia', nameshort='WPam'),
+    Point(point_id=30, name='Windpark Egmond aan Zee', nameshort='WPoz'),
+    Point(point_id=31, name='Windpark Gemini', nameshort='WPGe'),
+    Point(point_id=32, name='Windpark Borselle', nameshort='WPbo'),
+    Point(point_id=33, name='Windpark Borselle I&II', nameshort='WPb1'),
+    Point(point_id=34, name='Windpark Borselle III&IV', nameshort='Wpb3'),
+    Point(point_id=35, name='Windpark Hollandse Kust Zuid', nameshort='WPkz'),
+    Point(point_id=36, name='Windpark Hollandse Kust Noord', nameshort='WPkn'),
+  ])
+# ---

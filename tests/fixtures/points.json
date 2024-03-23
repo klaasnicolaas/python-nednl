@@ -1,0 +1,389 @@
+{
+  "@context": "/v1/contexts/Point",
+  "@id": "/v1/points",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/points/0",
+      "@type": "Point",
+      "id": 0,
+      "identifier": 0,
+      "name": "Nederland",
+      "nameshort": "NL",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [
+        "/v1/points/1",
+        "/v1/points/2",
+        "/v1/points/3",
+        "/v1/points/4",
+        "/v1/points/5",
+        "/v1/points/6",
+        "/v1/points/7",
+        "/v1/points/8",
+        "/v1/points/9",
+        "/v1/points/10",
+        "/v1/points/11",
+        "/v1/points/12",
+        "/v1/points/14"
+      ],
+      "parentpoints": []
+    },
+    {
+      "@id": "/v1/points/1",
+      "@type": "Point",
+      "id": 1,
+      "identifier": 1,
+      "name": "Groningen",
+      "nameshort": "Gr",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/2",
+      "@type": "Point",
+      "id": 2,
+      "identifier": 2,
+      "name": "Friesland",
+      "nameshort": "Fr",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/3",
+      "@type": "Point",
+      "id": 3,
+      "identifier": 3,
+      "name": "Drenthe",
+      "nameshort": "Dr",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/4",
+      "@type": "Point",
+      "id": 4,
+      "identifier": 4,
+      "name": "Overijssel",
+      "nameshort": "Ov",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/5",
+      "@type": "Point",
+      "id": 5,
+      "identifier": 5,
+      "name": "Flevoland",
+      "nameshort": "FL",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/6",
+      "@type": "Point",
+      "id": 6,
+      "identifier": 6,
+      "name": "Gelderland",
+      "nameshort": "Ge",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/7",
+      "@type": "Point",
+      "id": 7,
+      "identifier": 7,
+      "name": "Utrecht",
+      "nameshort": "Ut",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/8",
+      "@type": "Point",
+      "id": 8,
+      "identifier": 8,
+      "name": "Noord-Holland",
+      "nameshort": "No",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/9",
+      "@type": "Point",
+      "id": 9,
+      "identifier": 9,
+      "name": "Zuid-Holland",
+      "nameshort": "Zu",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/10",
+      "@type": "Point",
+      "id": 10,
+      "identifier": 10,
+      "name": "Zeeland",
+      "nameshort": "Ze",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/11",
+      "@type": "Point",
+      "id": 11,
+      "identifier": 11,
+      "name": "Noord-Brabant",
+      "nameshort": "Nb",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/12",
+      "@type": "Point",
+      "id": 12,
+      "identifier": 12,
+      "name": "Limburg",
+      "nameshort": "Li",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/0"]
+    },
+    {
+      "@id": "/v1/points/13",
+      "@type": "Point",
+      "id": 13,
+      "identifier": 13,
+      "name": "Eilanden",
+      "nameshort": "Ei",
+      "validfrom": "2016-01-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": []
+    },
+    {
+      "@id": "/v1/points/28",
+      "@type": "Point",
+      "id": 28,
+      "identifier": 28,
+      "name": "Windpark Luchterduinen",
+      "nameshort": "WPlu",
+      "validfrom": "2015-09-21T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/29",
+      "@type": "Point",
+      "id": 29,
+      "identifier": 29,
+      "name": "Windpark Princes Amalia",
+      "nameshort": "WPam",
+      "validfrom": "2008-06-04T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/30",
+      "@type": "Point",
+      "id": 30,
+      "identifier": 30,
+      "name": "Windpark Egmond aan Zee",
+      "nameshort": "WPoz",
+      "validfrom": "2007-04-18T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/31",
+      "@type": "Point",
+      "id": 31,
+      "identifier": 31,
+      "name": "Windpark Gemini",
+      "nameshort": "WPGe",
+      "validfrom": "2017-05-08T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/32",
+      "@type": "Point",
+      "id": 32,
+      "identifier": 32,
+      "name": "Windpark Borselle",
+      "nameshort": "WPbo",
+      "validfrom": "2020-05-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": ["/v1/points/34", "/v1/points/33"],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/33",
+      "@type": "Point",
+      "id": 33,
+      "identifier": 33,
+      "name": "Windpark Borselle I&II",
+      "nameshort": "WPb1",
+      "validfrom": "2020-05-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/32"]
+    },
+    {
+      "@id": "/v1/points/34",
+      "@type": "Point",
+      "id": 34,
+      "identifier": 34,
+      "name": "Windpark Borselle III&IV",
+      "nameshort": "Wpb3",
+      "validfrom": "2020-08-07T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/32"]
+    },
+    {
+      "@id": "/v1/points/35",
+      "@type": "Point",
+      "id": 35,
+      "identifier": 35,
+      "name": "Windpark Hollandse Kust Zuid",
+      "nameshort": "WPkz",
+      "validfrom": "2022-08-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    },
+    {
+      "@id": "/v1/points/36",
+      "@type": "Point",
+      "id": 36,
+      "identifier": 36,
+      "name": "Windpark Hollandse Kust Noord",
+      "nameshort": "WPkn",
+      "validfrom": "2023-08-01T00:00:00+00:00",
+      "validto": null,
+      "childpoints": [],
+      "parentpoints": ["/v1/points/14"]
+    }
+  ],
+  "hydra:totalItems": 30,
+  "hydra:search": {
+    "@type": "hydra:IriTemplate",
+    "hydra:template": "/v1/points{?id,id[],identifier,name,parentpoints,parentpoints[],childpoints,childpoints[],validfrom,validfrom[],validfrom[before],validfrom[strictly_before],validfrom[after],validfrom[strictly_after]}",
+    "hydra:variableRepresentation": "BasicRepresentation",
+    "hydra:mapping": [
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "id",
+        "property": "id",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "id[]",
+        "property": "id",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "identifier",
+        "property": "identifier",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "name",
+        "property": "name",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "parentpoints",
+        "property": "parentpoints",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "parentpoints[]",
+        "property": "parentpoints",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "childpoints",
+        "property": "childpoints",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "childpoints[]",
+        "property": "childpoints",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom",
+        "property": "validfrom",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom[]",
+        "property": "validfrom",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom[before]",
+        "property": "validfrom",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom[strictly_before]",
+        "property": "validfrom",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom[after]",
+        "property": "validfrom",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "validfrom[strictly_after]",
+        "property": "validfrom",
+        "required": false
+      }
+    ]
+  }
+}
