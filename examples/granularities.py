@@ -6,7 +6,7 @@ from nednl import NedNL
 
 
 async def main() -> None:
-    """Show the current status of the National Energy Dashboard NL."""
+    """Fetch all granularities from the National Energy Dashboard NL."""
     api_key: str = "YOUR_API_KEY"
     async with NedNL(api_key) as client:
         granularities = await client.all_granularities()

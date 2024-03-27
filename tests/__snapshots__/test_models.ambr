@@ -1,4 +1,10 @@
 # serializer version: 1
+# name: test_activities_data
+  list([
+    Activity(id=1, name='Providing'),
+    Activity(id=2, name='Consuming'),
+  ])
+# ---
 # name: test_granularities_data
   list([
     Granularity(id=3, name='10Min'),
