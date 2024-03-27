@@ -39,6 +39,7 @@ To use the datasets, you must first create an account on their website, then you
 
 <!-- TODO: Add a list of datasets that are supported by this package. -->
 
+- All activities
 - All granularities
 - All points
 

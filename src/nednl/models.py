@@ -9,6 +9,14 @@ from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
 @dataclass
+class ActivitiesResponse(DataClassORJSONMixin):
+    """Object representing an Activities API response."""
+
+    data: list[Activity] = field(metadata=field_options(alias="hydra:member"))
+    items: int = field(metadata=field_options(alias="hydra:totalItems"))
+
+
+@dataclass
 class GranularitiesResponse(DataClassORJSONMixin):
     """Object representing an Granularities API response."""
 
@@ -25,10 +33,18 @@ class PointsResponse(DataClassORJSONMixin):
 
 
 @dataclass
+class Activity(DataClassORJSONMixin):
+    """Object representing an activity from National Energy Dashboard NL."""
+
+    id: int  # noqa: A003, RUF100
+    name: str
+
+
+@dataclass
 class Granularity(DataClassORJSONMixin):
     """Object representing an granularity from National Energy Dashboard NL."""
 
-    id: int = field(metadata=field_options(alias="id"))  # noqa: A003, RUF100
+    id: int  # noqa: A003, RUF100
     name: str
 
 
@@ -36,6 +52,6 @@ class Granularity(DataClassORJSONMixin):
 class Point(DataClassORJSONMixin):
     """Object representing an area from National Energy Dashboard NL."""
 
-    id: int = field(metadata=field_options(alias="id"))  # noqa: A003, RUF100
+    id: int  # noqa: A003, RUF100
     name: str
     nameshort: str

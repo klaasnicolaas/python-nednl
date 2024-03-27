@@ -1,0 +1,20 @@
+{
+  "@context": "/v1/contexts/Activity",
+  "@id": "/v1/activities",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/activities/1",
+      "@type": "Activity",
+      "id": 1,
+      "name": "Providing"
+    },
+    {
+      "@id": "/v1/activities/2",
+      "@type": "Activity",
+      "id": 2,
+      "name": "Consuming"
+    }
+  ],
+  "hydra:totalItems": 2
+}
