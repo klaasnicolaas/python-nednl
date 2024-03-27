@@ -165,7 +165,7 @@ SOFTWARE.
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://github.com/klaasnicolaas/python-nednl/actions/workflows/tests.yaml/badge.svg
 [build-url]: https://github.com/klaasnicolaas/python-nednl/actions/workflows/tests.yaml
-[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-nednl/branch/main/graph/badge.svg?token=TOKEN
+[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-nednl/branch/main/graph/badge.svg?token=B0TL8CNX75
 [codecov-url]: https://codecov.io/gh/klaasnicolaas/python-nednl
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-nednl.svg
 [commits-url]: https://github.com/klaasnicolaas/python-nednl/commits/main
@@ -175,7 +175,7 @@ SOFTWARE.
 [downloads-url]: https://pypistats.org/packages/nednl
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-nednl.svg
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-nednl.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/TOKEN/maintainability
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/bd55196e975c3f32591b/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-nednl/maintainability
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
