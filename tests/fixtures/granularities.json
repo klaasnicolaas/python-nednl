@@ -1,0 +1,44 @@
+{
+  "@context": "/v1/contexts/Granularity",
+  "@id": "/v1/granularities",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/granularities/3",
+      "@type": "Granularity",
+      "id": 3,
+      "name": "10Min"
+    },
+    {
+      "@id": "/v1/granularities/4",
+      "@type": "Granularity",
+      "id": 4,
+      "name": "15Min"
+    },
+    {
+      "@id": "/v1/granularities/5",
+      "@type": "Granularity",
+      "id": 5,
+      "name": "Hour"
+    },
+    {
+      "@id": "/v1/granularities/6",
+      "@type": "Granularity",
+      "id": 6,
+      "name": "Day"
+    },
+    {
+      "@id": "/v1/granularities/7",
+      "@type": "Granularity",
+      "id": 7,
+      "name": "Month"
+    },
+    {
+      "@id": "/v1/granularities/8",
+      "@type": "Granularity",
+      "id": 8,
+      "name": "Year"
+    }
+  ],
+  "hydra:totalItems": 6
+}
