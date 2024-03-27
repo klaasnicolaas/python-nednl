@@ -8,6 +8,26 @@ from nednl import NedNL
 from . import load_fixtures
 
 
+async def test_granularities_data(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    nednl_client: NedNL,
+) -> None:
+    """Test granularities data is handled correctly."""
+    aresponses.add(
+        "api.ned.nl",
+        "/v1/granularities",
+        "GET",
+        aresponses.Response(
+            status=200,
+            content_type="application/ld+json",
+            body=load_fixtures("granularities.json"),
+        ),
+    )
+    response = await nednl_client.all_granularities()
+    assert response == snapshot
+
+
 async def test_points_data(
     aresponses: ResponsesMockServer,
     snapshot: SnapshotAssertion,

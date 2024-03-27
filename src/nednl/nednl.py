@@ -13,7 +13,7 @@ from aiohttp.hdrs import METH_GET
 from yarl import URL
 
 from .exceptions import NedNLAuthenticationError, NedNLConnectionError, NedNLError
-from .models import Point, PointsResponse
+from .models import GranularitiesResponse, Granularity, Point, PointsResponse
 
 VERSION = metadata.version(__package__)
 
@@ -104,6 +104,17 @@ class NedNL:
 
         return text
 
+    async def all_granularities(self) -> list[Granularity]:
+        """Get list of all granularities.
+
+        Returns
+        -------
+            List of all granularities.
+
+        """
+        response = await self._request("granularities")
+        return GranularitiesResponse.from_json(response).data
+
     async def all_points(self) -> list[Point]:
         """Get list of all area points.
 
@@ -113,7 +124,7 @@ class NedNL:
 
         """
         response = await self._request("points")
-        return PointsResponse.from_json(response).points
+        return PointsResponse.from_json(response).data
 
     async def close(self) -> None:
         """Close open client session."""

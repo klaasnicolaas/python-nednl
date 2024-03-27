@@ -39,6 +39,9 @@ To use the datasets, you must first create an account on their website, then you
 
 <!-- TODO: Add a list of datasets that are supported by this package. -->
 
+- All granularities
+- All points
+
 Currently there is a limit of 200 requests per 5 minutes.
 
 ### Example
