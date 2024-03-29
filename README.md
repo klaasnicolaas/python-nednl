@@ -40,8 +40,10 @@ To use the datasets, you must first create an account on their website, then you
 <!-- TODO: Add a list of datasets that are supported by this package. -->
 
 - All activities
+- All classifications
 - All granularities
 - All points
+- All types
 
 Currently there is a limit of 200 requests per 5 minutes.
 

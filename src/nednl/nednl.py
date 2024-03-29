@@ -16,10 +16,14 @@ from .exceptions import NedNLAuthenticationError, NedNLConnectionError, NedNLErr
 from .models import (
     ActivitiesResponse,
     Activity,
+    Classification,
+    ClassificationsResponse,
     GranularitiesResponse,
     Granularity,
     Point,
     PointsResponse,
+    Type,
+    TypesResponse,
 )
 
 VERSION = metadata.version(__package__)
@@ -122,6 +126,17 @@ class NedNL:
         response = await self._request("activities")
         return ActivitiesResponse.from_json(response).data
 
+    async def all_classifications(self) -> list[Classification]:
+        """Get list of all classifications.
+
+        Returns
+        -------
+            List of all classifications.
+
+        """
+        response = await self._request("classifications")
+        return ClassificationsResponse.from_json(response).data
+
     async def all_granularities(self) -> list[Granularity]:
         """Get list of all granularities.
 
@@ -143,6 +158,17 @@ class NedNL:
         """
         response = await self._request("points")
         return PointsResponse.from_json(response).data
+
+    async def all_types(self) -> list[Type]:
+        """Get list of all types.
+
+        Returns
+        -------
+            List of all types.
+
+        """
+        response = await self._request("types", params={"itemsPerPage": 100})
+        return TypesResponse.from_json(response).data
 
     async def close(self) -> None:
         """Close open client session."""

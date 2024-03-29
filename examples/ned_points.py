@@ -10,7 +10,9 @@ async def main() -> None:
     api_key: str = "YOUR_API_KEY"
     async with NedNL(api_key) as client:
         points = await client.all_points()
-        print(points)
+
+        for item in points:
+            print(item)
 
 
 if __name__ == "__main__":

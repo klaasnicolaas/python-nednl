@@ -1,0 +1,428 @@
+{
+  "@context": "/v1/contexts/Type",
+  "@id": "/v1/types",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/types/1",
+      "@type": "Type",
+      "id": 1,
+      "identifier": 1,
+      "name": "Wind",
+      "nameshort": "W"
+    },
+    {
+      "@id": "/v1/types/2",
+      "@type": "Type",
+      "id": 2,
+      "identifier": 2,
+      "name": "Solar",
+      "nameshort": "S"
+    },
+    {
+      "@id": "/v1/types/3",
+      "@type": "Type",
+      "id": 3,
+      "identifier": 3,
+      "name": "Biogas",
+      "nameshort": "B"
+    },
+    {
+      "@id": "/v1/types/4",
+      "@type": "Type",
+      "id": 4,
+      "identifier": 4,
+      "name": "HeatPump",
+      "nameshort": "HP"
+    },
+    {
+      "@id": "/v1/types/5",
+      "@type": "Type",
+      "id": 5,
+      "identifier": 5,
+      "name": "AirHeatPump",
+      "nameshort": "AHP"
+    },
+    {
+      "@id": "/v1/types/6",
+      "@type": "Type",
+      "id": 6,
+      "identifier": 6,
+      "name": "HybridHeatPump",
+      "nameshort": "HHP"
+    },
+    {
+      "@id": "/v1/types/7",
+      "@type": "Type",
+      "id": 7,
+      "identifier": 7,
+      "name": "GroundHeatPump",
+      "nameshort": "GHP"
+    },
+    {
+      "@id": "/v1/types/8",
+      "@type": "Type",
+      "id": 8,
+      "identifier": 8,
+      "name": "Cofiring",
+      "nameshort": "COF"
+    },
+    {
+      "@id": "/v1/types/9",
+      "@type": "Type",
+      "id": 9,
+      "identifier": 9,
+      "name": "Geothermal",
+      "nameshort": "GEO"
+    },
+    {
+      "@id": "/v1/types/10",
+      "@type": "Type",
+      "id": 10,
+      "identifier": 10,
+      "name": "Other",
+      "nameshort": "OTHR"
+    },
+    {
+      "@id": "/v1/types/11",
+      "@type": "Type",
+      "id": 11,
+      "identifier": 11,
+      "name": "Waste",
+      "nameshort": "WST"
+    },
+    {
+      "@id": "/v1/types/12",
+      "@type": "Type",
+      "id": 12,
+      "identifier": 12,
+      "name": "BioOil",
+      "nameshort": "BOIL"
+    },
+    {
+      "@id": "/v1/types/13",
+      "@type": "Type",
+      "id": 13,
+      "identifier": 13,
+      "name": "Biomass",
+      "nameshort": "BMSS"
+    },
+    {
+      "@id": "/v1/types/14",
+      "@type": "Type",
+      "id": 14,
+      "identifier": 14,
+      "name": "Wood",
+      "nameshort": "WOOD"
+    },
+    {
+      "@id": "/v1/types/15",
+      "@type": "Type",
+      "id": 15,
+      "identifier": 15,
+      "name": "WoodActiveHeating",
+      "nameshort": "WOAH"
+    },
+    {
+      "@id": "/v1/types/16",
+      "@type": "Type",
+      "id": 16,
+      "identifier": 16,
+      "name": "WoodComfortHeating",
+      "nameshort": "WOCH"
+    },
+    {
+      "@id": "/v1/types/17",
+      "@type": "Type",
+      "id": 17,
+      "identifier": 17,
+      "name": "WindOffshore",
+      "nameshort": "WIOS"
+    },
+    {
+      "@id": "/v1/types/18",
+      "@type": "Type",
+      "id": 18,
+      "identifier": 18,
+      "name": "FossilGasPower",
+      "nameshort": "FGP"
+    },
+    {
+      "@id": "/v1/types/19",
+      "@type": "Type",
+      "id": 19,
+      "identifier": 19,
+      "name": "FossilHardCoal",
+      "nameshort": "FHC"
+    },
+    {
+      "@id": "/v1/types/20",
+      "@type": "Type",
+      "id": 20,
+      "identifier": 20,
+      "name": "Nuclear",
+      "nameshort": "NCL"
+    },
+    {
+      "@id": "/v1/types/21",
+      "@type": "Type",
+      "id": 21,
+      "identifier": 21,
+      "name": "WastePower",
+      "nameshort": "WP"
+    },
+    {
+      "@id": "/v1/types/22",
+      "@type": "Type",
+      "id": 22,
+      "identifier": 22,
+      "name": "WindOffshoreB",
+      "nameshort": "WOSB"
+    },
+    {
+      "@id": "/v1/types/23",
+      "@type": "Type",
+      "id": 23,
+      "identifier": 23,
+      "name": "NaturalGas",
+      "nameshort": "NG"
+    },
+    {
+      "@id": "/v1/types/24",
+      "@type": "Type",
+      "id": 24,
+      "identifier": 24,
+      "name": "Biomethane",
+      "nameshort": "BM"
+    },
+    {
+      "@id": "/v1/types/25",
+      "@type": "Type",
+      "id": 25,
+      "identifier": 25,
+      "name": "BiomassPower",
+      "nameshort": "BMP"
+    },
+    {
+      "@id": "/v1/types/26",
+      "@type": "Type",
+      "id": 26,
+      "identifier": 26,
+      "name": "OtherPower",
+      "nameshort": "OP"
+    },
+    {
+      "@id": "/v1/types/27",
+      "@type": "Type",
+      "id": 27,
+      "identifier": 27,
+      "name": "ElectricityMix",
+      "nameshort": "EM"
+    },
+    {
+      "@id": "/v1/types/28",
+      "@type": "Type",
+      "id": 28,
+      "identifier": 28,
+      "name": "GasMix",
+      "nameshort": "GM"
+    },
+    {
+      "@id": "/v1/types/29",
+      "@type": "Type",
+      "id": 29,
+      "identifier": 29,
+      "name": "GasPrivateDistributionCompanies",
+      "nameshort": "GPDC"
+    },
+    {
+      "@id": "/v1/types/30",
+      "@type": "Type",
+      "id": 30,
+      "identifier": 30,
+      "name": "GasFinalConsumers",
+      "nameshort": "GFC"
+    },
+    {
+      "@id": "/v1/types/31",
+      "@type": "Type",
+      "id": 31,
+      "identifier": 31,
+      "name": "GasDistribution",
+      "nameshort": "GD"
+    },
+    {
+      "@id": "/v1/types/32",
+      "@type": "Type",
+      "id": 32,
+      "identifier": 32,
+      "name": "CHPElectricity",
+      "nameshort": "CHPE"
+    },
+    {
+      "@id": "/v1/types/33",
+      "@type": "Type",
+      "id": 33,
+      "identifier": 33,
+      "name": "WindB",
+      "nameshort": "WB"
+    },
+    {
+      "@id": "/v1/types/34",
+      "@type": "Type",
+      "id": 34,
+      "identifier": 34,
+      "name": "SolarB",
+      "nameshort": "SB"
+    },
+    {
+      "@id": "/v1/types/35",
+      "@type": "Type",
+      "id": 35,
+      "identifier": 35,
+      "name": "WKK Total",
+      "nameshort": "WKKT"
+    },
+    {
+      "@id": "/v1/types/36",
+      "@type": "Type",
+      "id": 36,
+      "identifier": 36,
+      "name": "WKK Distribution",
+      "nameshort": "WKKD"
+    },
+    {
+      "@id": "/v1/types/37",
+      "@type": "Type",
+      "id": 37,
+      "identifier": 37,
+      "name": "WKK Final Consumers",
+      "nameshort": "WKKF"
+    },
+    {
+      "@id": "/v1/types/38",
+      "@type": "Type",
+      "id": 38,
+      "identifier": 38,
+      "name": "Gas Feedstock",
+      "nameshort": "GFS"
+    },
+    {
+      "@id": "/v1/types/43",
+      "@type": "Type",
+      "id": 43,
+      "identifier": 43,
+      "name": "IndustrialConsumersLGas",
+      "nameshort": "ICLG"
+    },
+    {
+      "@id": "/v1/types/45",
+      "@type": "Type",
+      "id": 45,
+      "identifier": 45,
+      "name": "LocalDistributionCompaniesHGas",
+      "nameshort": "LDCH"
+    },
+    {
+      "@id": "/v1/types/46",
+      "@type": "Type",
+      "id": 46,
+      "identifier": 46,
+      "name": "LocalDistributionCompaniesLGas",
+      "nameshort": "LDCL"
+    },
+    {
+      "@id": "/v1/types/47",
+      "@type": "Type",
+      "id": 47,
+      "identifier": 47,
+      "name": "IndustrialConsumersPowerHGas",
+      "nameshort": "ICPH"
+    },
+    {
+      "@id": "/v1/types/48",
+      "@type": "Type",
+      "id": 48,
+      "identifier": 48,
+      "name": "IndustrialConsumersPowerLGas",
+      "nameshort": "ICPL"
+    },
+    {
+      "@id": "/v1/types/49",
+      "@type": "Type",
+      "id": 49,
+      "identifier": 49,
+      "name": "IndustrialConsumersHGas",
+      "nameshort": "ICH"
+    },
+    {
+      "@id": "/v1/types/50",
+      "@type": "Type",
+      "id": 50,
+      "identifier": 50,
+      "name": "SolarThermal",
+      "nameshort": "ST"
+    },
+    {
+      "@id": "/v1/types/51",
+      "@type": "Type",
+      "id": 51,
+      "identifier": 51,
+      "name": "WindOffshoreC",
+      "nameshort": "WOSC"
+    },
+    {
+      "@id": "/v1/types/53",
+      "@type": "Type",
+      "id": 53,
+      "identifier": 53,
+      "name": "IndustrialConsumersGasCombination",
+      "nameshort": "ICGC"
+    },
+    {
+      "@id": "/v1/types/54",
+      "@type": "Type",
+      "id": 54,
+      "identifier": 54,
+      "name": "IndustrialConsumersPowerGasCombination",
+      "nameshort": "ICPG"
+    },
+    {
+      "@id": "/v1/types/55",
+      "@type": "Type",
+      "id": 55,
+      "identifier": 55,
+      "name": "LocalDistributionCompaniesCombination",
+      "nameshort": "LDCC"
+    },
+    {
+      "@id": "/v1/types/56",
+      "@type": "Type",
+      "id": 56,
+      "identifier": 56,
+      "name": "AllConsumingGas",
+      "nameshort": "AEGC"
+    },
+    {
+      "@id": "/v1/types/57",
+      "@type": "Type",
+      "id": 57,
+      "identifier": 57,
+      "name": "ElectricityRenewable",
+      "nameshort": "ER"
+    },
+    {
+      "@id": "/v1/types/58",
+      "@type": "Type",
+      "id": 58,
+      "identifier": 58,
+      "name": "ElectricityFossile",
+      "nameshort": "EF"
+    }
+  ],
+  "hydra:totalItems": 52,
+  "hydra:view": {
+    "@id": "/v1/types?itemsPerPage=100",
+    "@type": "hydra:PartialCollectionView"
+  }
+}
