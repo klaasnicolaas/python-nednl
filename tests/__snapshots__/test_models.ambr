@@ -5,6 +5,13 @@
     Activity(id=2, name='Consuming'),
   ])
 # ---
+# name: test_classifications_data
+  list([
+    Classification(id=1, name='Forecast'),
+    Classification(id=2, name='Current'),
+    Classification(id=3, name='Backcast'),
+  ])
+# ---
 # name: test_granularities_data
   list([
     Granularity(id=3, name='10Min'),

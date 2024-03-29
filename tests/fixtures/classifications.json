@@ -1,0 +1,26 @@
+{
+  "@context": "/v1/contexts/Classification",
+  "@id": "/v1/classifications",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/classifications/1",
+      "@type": "Classification",
+      "id": 1,
+      "name": "Forecast"
+    },
+    {
+      "@id": "/v1/classifications/2",
+      "@type": "Classification",
+      "id": 2,
+      "name": "Current"
+    },
+    {
+      "@id": "/v1/classifications/3",
+      "@type": "Classification",
+      "id": 3,
+      "name": "Backcast"
+    }
+  ],
+  "hydra:totalItems": 3
+}

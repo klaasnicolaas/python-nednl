@@ -28,6 +28,26 @@ async def test_activities_data(
     assert response == snapshot
 
 
+async def test_classifications_data(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    nednl_client: NedNL,
+) -> None:
+    """Test classifications data is handled correctly."""
+    aresponses.add(
+        "api.ned.nl",
+        "/v1/classifications",
+        "GET",
+        aresponses.Response(
+            status=200,
+            content_type="application/ld+json",
+            body=load_fixtures("classifications.json"),
+        ),
+    )
+    response = await nednl_client.all_classifications()
+    assert response == snapshot
+
+
 async def test_granularities_data(
     aresponses: ResponsesMockServer,
     snapshot: SnapshotAssertion,

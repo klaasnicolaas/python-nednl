@@ -6,12 +6,12 @@ from nednl import NedNL
 
 
 async def main() -> None:
-    """Fetch all area points from the National Energy Dashboard NL."""
+    """Fetch all classifications from the National Energy Dashboard NL."""
     api_key: str = "YOUR_API_KEY"
     async with NedNL(api_key) as client:
-        points = await client.all_points()
+        classifications = await client.all_classifications()
 
-        for item in points:
+        for item in classifications:
             print(item)
 
 

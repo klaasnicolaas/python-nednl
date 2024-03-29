@@ -41,6 +41,14 @@ class Activity(NedDataMixin, DataClassORJSONMixin):
 
 
 @dataclass(slots=True)
+class Classification(NedDataMixin, DataClassORJSONMixin):
+    """Object representing an classification from National Energy Dashboard NL."""
+
+    id: int  # noqa: A003, RUF100
+    name: str
+
+
+@dataclass(slots=True)
 class Granularity(NedDataMixin, DataClassORJSONMixin):
     """Object representing an granularity from National Energy Dashboard NL."""
 
@@ -69,6 +77,11 @@ class Type(NedDataMixin, DataClassORJSONMixin):
 @dataclass(slots=True)
 class ActivitiesResponse(BaseResponse[list[Activity]]):
     """Object representing an Activities API response."""
+
+
+@dataclass(slots=True)
+class ClassificationsResponse(BaseResponse[list[Classification]]):
+    """Object representing an Classifications API response."""
 
 
 @dataclass(slots=True)

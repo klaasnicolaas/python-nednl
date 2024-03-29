@@ -16,6 +16,8 @@ from .exceptions import NedNLAuthenticationError, NedNLConnectionError, NedNLErr
 from .models import (
     ActivitiesResponse,
     Activity,
+    Classification,
+    ClassificationsResponse,
     GranularitiesResponse,
     Granularity,
     Point,
@@ -123,6 +125,17 @@ class NedNL:
         """
         response = await self._request("activities")
         return ActivitiesResponse.from_json(response).data
+
+    async def all_classifications(self) -> list[Classification]:
+        """Get list of all classifications.
+
+        Returns
+        -------
+            List of all classifications.
+
+        """
+        response = await self._request("classifications")
+        return ClassificationsResponse.from_json(response).data
 
     async def all_granularities(self) -> list[Granularity]:
         """Get list of all granularities.

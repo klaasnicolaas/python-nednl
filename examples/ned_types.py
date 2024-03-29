@@ -10,7 +10,9 @@ async def main() -> None:
     api_key: str = "YOUR_API_KEY"
     async with NedNL(api_key) as client:
         types = await client.all_types()
-        print(types)
+
+        for item in types:
+            print(item)
 
 
 if __name__ == "__main__":
