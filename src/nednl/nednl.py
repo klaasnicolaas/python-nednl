@@ -20,6 +20,8 @@ from .models import (
     ClassificationsResponse,
     GranularitiesResponse,
     Granularity,
+    GranularityTimezone,
+    GranularityTimezonesResponse,
     Point,
     PointsResponse,
     Type,
@@ -147,6 +149,17 @@ class NedNL:
         """
         response = await self._request("granularities")
         return GranularitiesResponse.from_json(response).data
+
+    async def all_granularity_timezones(self) -> list[GranularityTimezone]:
+        """Get list of all granularity timezones.
+
+        Returns
+        -------
+            List of all granularity timezones.
+
+        """
+        response = await self._request("granularity_time_zones")
+        return GranularityTimezonesResponse.from_json(response).data
 
     async def all_points(self) -> list[Point]:
         """Get list of all area points.

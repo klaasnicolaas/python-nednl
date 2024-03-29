@@ -57,6 +57,14 @@ class Granularity(NedDataMixin, DataClassORJSONMixin):
 
 
 @dataclass(slots=True)
+class GranularityTimezone(NedDataMixin, DataClassORJSONMixin):
+    """Object representing an granularity timezone from National Energy Dashboard NL."""
+
+    id: int  # noqa: A003, RUF100
+    name: str
+
+
+@dataclass(slots=True)
 class Point(NedDataMixin, DataClassORJSONMixin):
     """Object representing an area from National Energy Dashboard NL."""
 
@@ -87,6 +95,11 @@ class ClassificationsResponse(BaseResponse[list[Classification]]):
 @dataclass(slots=True)
 class GranularitiesResponse(BaseResponse[list[Granularity]]):
     """Object representing an Granularities API response."""
+
+
+@dataclass(slots=True)
+class GranularityTimezonesResponse(BaseResponse[list[GranularityTimezone]]):
+    """Object representing an GranularityTimezones API response."""
 
 
 @dataclass(slots=True)
