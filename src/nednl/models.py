@@ -26,7 +26,7 @@ class NedDataMixin(DataClassDictMixin):
 
 @dataclass
 class BaseResponse(Generic[_ResultDataT], NedDataMixin, DataClassORJSONMixin):
-    """Base object representing an API response."""
+    """Base object representing the API response."""
 
     data: _ResultDataT = field(metadata=field_options(alias="hydra:member"))
     items: int = field(metadata=field_options(alias="hydra:totalItems"))
@@ -54,7 +54,16 @@ class Point(NedDataMixin, DataClassORJSONMixin):
 
     id: int  # noqa: A003, RUF100
     name: str
-    nameshort: str
+    shortname: str = field(metadata=field_options(alias="nameshort"))
+
+
+@dataclass(slots=True)
+class Type(NedDataMixin, DataClassORJSONMixin):
+    """Object representing an type from National Energy Dashboard NL."""
+
+    id: int  # noqa: A003, RUF100
+    name: str
+    shortname: str = field(metadata=field_options(alias="nameshort"))
 
 
 @dataclass(slots=True)
@@ -70,3 +79,8 @@ class GranularitiesResponse(BaseResponse[list[Granularity]]):
 @dataclass(slots=True)
 class PointsResponse(BaseResponse[list[Point]]):
     """Object representing an Points API response."""
+
+
+@dataclass(slots=True)
+class TypesResponse(BaseResponse[list[Type]]):
+    """Object representing an Types API response."""

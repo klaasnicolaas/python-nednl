@@ -1,7 +1,7 @@
 """Asynchronous Python client for National Energy Dashboard NL."""
 
 from .exceptions import NedNLAuthenticationError, NedNLConnectionError, NedNLError
-from .models import Activity, Granularity, Point
+from .models import Activity, Granularity, Point, Type
 from .nednl import NedNL
 
 __all__ = [
@@ -12,4 +12,5 @@ __all__ = [
     "NedNLConnectionError",
     "NedNLError",
     "Point",
+    "Type",
 ]

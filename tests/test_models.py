@@ -66,3 +66,23 @@ async def test_points_data(
     )
     response = await nednl_client.all_points()
     assert response == snapshot
+
+
+async def test_types_data(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    nednl_client: NedNL,
+) -> None:
+    """Test types data is handled correctly."""
+    aresponses.add(
+        "api.ned.nl",
+        "/v1/types",
+        "GET",
+        aresponses.Response(
+            status=200,
+            content_type="application/ld+json",
+            body=load_fixtures("types.json"),
+        ),
+    )
+    response = await nednl_client.all_types()
+    assert response == snapshot

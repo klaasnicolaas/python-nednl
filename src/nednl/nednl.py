@@ -20,6 +20,8 @@ from .models import (
     Granularity,
     Point,
     PointsResponse,
+    Type,
+    TypesResponse,
 )
 
 VERSION = metadata.version(__package__)
@@ -143,6 +145,17 @@ class NedNL:
         """
         response = await self._request("points")
         return PointsResponse.from_json(response).data
+
+    async def all_types(self) -> list[Type]:
+        """Get list of all types.
+
+        Returns
+        -------
+            List of all types.
+
+        """
+        response = await self._request("types", params={"itemsPerPage": 100})
+        return TypesResponse.from_json(response).data
 
     async def close(self) -> None:
         """Close open client session."""
