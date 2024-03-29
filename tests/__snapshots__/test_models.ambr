@@ -22,6 +22,12 @@
     Granularity(id=8, name='Year'),
   ])
 # ---
+# name: test_granularity_timezones_data
+  list([
+    GranularityTimezone(id=0, name='UTC'),
+    GranularityTimezone(id=1, name='Europe/Amsterdam'),
+  ])
+# ---
 # name: test_points_data
   list([
     Point(id=0, name='Nederland', shortname='NL'),

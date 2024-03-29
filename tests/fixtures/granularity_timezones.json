@@ -1,0 +1,20 @@
+{
+  "@context": "/v1/contexts/GranularityTimeZone",
+  "@id": "/v1/granularity_time_zones",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "@id": "/v1/granularity_time_zones/0",
+      "@type": "GranularityTimeZone",
+      "id": 0,
+      "name": "UTC"
+    },
+    {
+      "@id": "/v1/granularity_time_zones/1",
+      "@type": "GranularityTimeZone",
+      "id": 1,
+      "name": "Europe/Amsterdam"
+    }
+  ],
+  "hydra:totalItems": 2
+}

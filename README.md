@@ -42,6 +42,7 @@ To use the datasets, you must first create an account on their website, then you
 - All activities
 - All classifications
 - All granularities
+- All granularity timezones
 - All points
 - All types
 
