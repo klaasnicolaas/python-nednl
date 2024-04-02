@@ -23,7 +23,7 @@ Asynchronous Python client for [National Energy Dashboard][ned] NL.
 
 ## About
 
-A Python package that allows you to retrieve data via the [API][api] of the [National Energy Dashboard][ned]. A data portal with datasets about the gas and electricity supply in the Netherlands.
+A Python package that allows you to retrieve data via the [API][api] of the [National Energy Dashboard][ned]. A data portal with datasets about the gas and electricity providing / consuming in the Netherlands.
 
 ## Installation
 
@@ -33,7 +33,7 @@ pip install nednl
 
 ### API Key
 
-To use the datasets, you must first create an account on their website, then you can generate an API key.
+Before accessing the datasets, it's necessary to create an account on the website of NED. After you have done this, you'll be able to generate a unique API key, granting you access to the datasets.
 
 ## Datasets
 
@@ -45,10 +45,13 @@ To use the datasets, you must first create an account on their website, then you
 - All granularity timezones
 - All points
 - All types
+- Utilization
 
 Currently there is a limit of 200 requests per 5 minutes.
 
 ### Example
+
+An example of how you can query the solar consumption of the Netherlands with a granularity per 10 minutes.
 
 ```python
 import asyncio
@@ -60,8 +63,17 @@ async def main() -> None:
     """Show example on using this package."""
 
     async with NedNL("YOUR_API_KEY") as client:
-        data = await client.all_points()
-        print(data)
+        response = await client.utilization(
+            point_id=0,
+            type_id=2,
+            granularity_id=3,
+            granularity_timezone_id=1,
+            classification_id=2,
+            activity_id=1,
+            start_date="2024-03-29",
+            end_date="2024-03-30",
+        )
+        print(response)
 
 if __name__ == "__main__":
     asyncio.run(main())
