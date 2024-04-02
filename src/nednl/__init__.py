@@ -8,6 +8,7 @@ from .models import (
     GranularityTimezone,
     Point,
     Type,
+    Utilization,
 )
 from .nednl import NedNL
 
@@ -22,4 +23,5 @@ __all__ = [
     "NedNLError",
     "Point",
     "Type",
+    "Utilization",
 ]

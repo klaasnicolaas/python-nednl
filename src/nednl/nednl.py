@@ -26,6 +26,8 @@ from .models import (
     PointsResponse,
     Type,
     TypesResponse,
+    Utilization,
+    UtilizationsResponse,
 )
 
 VERSION = metadata.version(__package__)
@@ -182,6 +184,50 @@ class NedNL:
         """
         response = await self._request("types", params={"itemsPerPage": 100})
         return TypesResponse.from_json(response).data
+
+    async def utilization(  # noqa: PLR0913, pylint: disable=too-many-arguments
+        self,
+        point_id: int,
+        type_id: int,
+        granularity_id: int,
+        granularity_timezone_id: int,
+        classification_id: int,
+        activity_id: int,
+        start_date: str,
+        end_date: str,
+    ) -> list[Utilization]:
+        """Get utilization data for a specific point, granularity, and time.
+
+        Args:
+        ----
+            point_id: The ID of the point.
+            type_id: The ID of the type.
+            granularity_id: The ID of the granularity.
+            granularity_timezone_id: The ID of the granularity timezone.
+            classification_id: The ID of the classification.
+            activity_id: The ID of the activity.
+            start_date: The start date of the data.
+            end_date: The end date of the data.
+
+        Returns:
+        -------
+            Utilization data for the specific point, granularity, and time.
+
+        """
+        response = await self._request(
+            "utilizations",
+            params={
+                "point": point_id,
+                "type": type_id,
+                "granularity": granularity_id,
+                "granularitytimezone": granularity_timezone_id,
+                "classification": classification_id,
+                "activity": activity_id,
+                "validfrom[strictly_after]": start_date,
+                "validfrom[strictly_before]": end_date,
+            },
+        )
+        return UtilizationsResponse.from_json(response).data
 
     async def close(self) -> None:
         """Close open client session."""

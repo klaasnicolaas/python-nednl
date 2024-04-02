@@ -126,3 +126,32 @@ async def test_types_data(
     )
     response = await nednl_client.all_types()
     assert response == snapshot
+
+
+async def test_utilizations_data(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    nednl_client: NedNL,
+) -> None:
+    """Test utilizations data is handled correctly."""
+    aresponses.add(
+        "api.ned.nl",
+        "/v1/utilizations",
+        "GET",
+        aresponses.Response(
+            status=200,
+            content_type="application/ld+json",
+            body=load_fixtures("utilizations.json"),
+        ),
+    )
+    response = await nednl_client.utilization(
+        point_id=0,
+        type_id=2,
+        granularity_id=3,
+        granularity_timezone_id=1,
+        classification_id=2,
+        activity_id=1,
+        start_date="2024-03-29",
+        end_date="2024-03-30",
+    )
+    assert response == snapshot
