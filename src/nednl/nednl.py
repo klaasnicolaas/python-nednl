@@ -187,6 +187,7 @@ class NedNL:
 
     async def utilization(  # noqa: PLR0913, pylint: disable=too-many-arguments
         self,
+        *,
         point_id: int,
         type_id: int,
         granularity_id: int,
