@@ -15,7 +15,6 @@
 
 [![Build Status][build-shield]][build-url]
 [![Typing Status][typing-shield]][typing-url]
-[![Maintainability][maintainability-shield]][maintainability-url]
 [![Code Coverage][codecov-shield]][codecov-url]
 
 
@@ -189,8 +188,6 @@ SOFTWARE.
 [downloads-url]: https://pypistats.org/packages/nednl
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-nednl.svg
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-nednl.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/bd55196e975c3f32591b/maintainability
-[maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-nednl/maintainability
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/nednl/
