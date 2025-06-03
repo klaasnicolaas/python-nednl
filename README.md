@@ -151,7 +151,7 @@ poetry run pytest --snapshot-update
 
 MIT License
 
-Copyright (c) 2024 Klaas Schoute
+Copyright (c) 2024-2025 Klaas Schoute
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -191,7 +191,7 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-nednl.svg
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/bd55196e975c3f32591b/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-nednl/maintainability
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/nednl/
 [python-versions-shield]: https://img.shields.io/pypi/pyversions/nednl
