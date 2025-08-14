@@ -92,7 +92,7 @@ class Utilization(NedDataMixin, DataClassORJSONMixin):
     volume: int
     percentage: float
     emission: int
-    emission_factor: int = field(metadata=field_options(alias="emissionfactor"))
+    emission_factor: float = field(metadata=field_options(alias="emissionfactor"))
     valid_from: datetime = field(metadata=field_options(alias="validfrom"))
     valid_to: datetime = field(metadata=field_options(alias="validto"))
     last_update: datetime = field(metadata=field_options(alias="lastupdate"))
