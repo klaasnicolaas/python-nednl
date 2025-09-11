@@ -26,7 +26,7 @@ class NedDataMixin(DataClassDictMixin):
 
 
 @dataclass
-class BaseResponse(Generic[_ResultDataT], NedDataMixin, DataClassORJSONMixin):
+class BaseResponse(NedDataMixin, DataClassORJSONMixin, Generic[_ResultDataT]):
     """Base object representing the API response."""
 
     data: _ResultDataT = field(metadata=field_options(alias="hydra:member"))
