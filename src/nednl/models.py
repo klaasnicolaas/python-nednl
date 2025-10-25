@@ -4,14 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Generic, TypeVar
 
 from mashumaro import field_options
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.dict import DataClassDictMixin
 from mashumaro.mixins.orjson import DataClassORJSONMixin
-
-_ResultDataT = TypeVar("_ResultDataT")
 
 
 @dataclass
@@ -26,10 +23,10 @@ class NedDataMixin(DataClassDictMixin):
 
 
 @dataclass
-class BaseResponse(NedDataMixin, DataClassORJSONMixin, Generic[_ResultDataT]):
+class BaseResponse[ResultDataT](NedDataMixin, DataClassORJSONMixin):
     """Base object representing the API response."""
 
-    data: _ResultDataT = field(metadata=field_options(alias="hydra:member"))
+    data: ResultDataT = field(metadata=field_options(alias="hydra:member"))
     items: int = field(metadata=field_options(alias="hydra:totalItems"))
 
 
