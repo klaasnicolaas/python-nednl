@@ -86,9 +86,9 @@ jobs:
       - name: 🏗 Install Python dependencies
         run: poetry install --no-interaction
       - name: 🚀 Check Python AST
-        run: poetry run prekheck-ast --all-files
+        run: poetry run prek check-ast --all-files
       - name: 🚀 Check for case conflicts
-        run: poetry run prekheck-case-conflict --all-files
+        run: poetry run prek check-case-conflict --all-files
       - name: 🚀 Check docstring is first
         run: poetry run prek run check-docstring-first --all-files
       - name: 🚀 Check that executables have shebangs
