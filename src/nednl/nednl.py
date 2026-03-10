@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import socket
 from dataclasses import dataclass
 from importlib import metadata
@@ -12,7 +13,17 @@ from aiohttp import ClientError, ClientResponseError, ClientSession
 from aiohttp.hdrs import METH_GET
 from yarl import URL
 
-from .exceptions import NedNLAuthenticationError, NedNLConnectionError, NedNLError
+from .exceptions import (
+    NedNLAuthenticationError,
+    NedNLClientError,
+    NedNLConnectionError,
+    NedNLError,
+    NedNLNotFoundError,
+    NedNLRateLimitError,
+    NedNLServerError,
+    NedNLTimeoutError,
+    NedNLValidationError,
+)
 from .models import (
     ActivitiesResponse,
     Activity,
@@ -43,6 +54,78 @@ class NedNL:
 
     _close_session: bool = False
 
+    @staticmethod
+    def _parse_error_response(response_text: str, status: int) -> dict[str, Any]:
+        """Parse error response body as JSON.
+
+        Args:
+        ----
+            response_text: The response body text.
+            status: HTTP status code.
+
+        Returns:
+        -------
+            Parsed error data dictionary.
+
+        """
+        try:
+            data: dict[str, Any] = json.loads(response_text)
+        except json.JSONDecodeError:
+            return {"message": f"HTTP {status} error"}
+        else:
+            return data
+
+    @staticmethod
+    def _validate_content_type(content_type: str) -> None:
+        """Validate response content type.
+
+        Args:
+        ----
+            content_type: The Content-Type header value.
+
+        Raises:
+        ------
+            NedNLError: If content type is not application/ld+json.
+
+        """
+        if "application/ld+json" not in content_type:
+            msg = f"Unexpected content type: {content_type}"
+            raise NedNLError(msg)
+
+    @staticmethod
+    def _handle_http_error(
+        exception: ClientResponseError,
+        error_data: dict[str, Any],
+    ) -> None:
+        """Handle HTTP error responses and raise appropriate exceptions.
+
+        Args:
+        ----
+            exception: The ClientResponseError from aiohttp.
+            error_data: Parsed error response data.
+
+        Raises:
+        ------
+            NedNLAuthenticationError: For 401 or 403 status codes.
+            NedNLRateLimitError: For 429 status code.
+            NedNLValidationError: For 400 status code.
+            NedNLNotFoundError: For 404 status code.
+            NedNLClientError: For other 4xx status codes.
+            NedNLServerError: For 5xx status codes.
+
+        """
+        if exception.status in (401, 403):
+            raise NedNLAuthenticationError(error_data) from exception
+        if exception.status == 429:
+            raise NedNLRateLimitError(error_data) from exception
+        if exception.status == 400:
+            raise NedNLValidationError(error_data) from exception
+        if exception.status == 404:
+            raise NedNLNotFoundError(error_data) from exception
+        if 400 <= exception.status < 500:
+            raise NedNLClientError(error_data) from exception
+        raise NedNLServerError(error_data) from exception
+
     async def _request(
         self,
         uri: str,
@@ -64,7 +147,13 @@ class NedNL:
 
         Raises:
         ------
-            NedNLAuthenticationError: If no API key is provided.
+            NedNLAuthenticationError: If authentication fails (HTTP 403) or no API key.
+            NedNLTimeoutError: If the request times out.
+            NedNLRateLimitError: If rate limit is exceeded (HTTP 429).
+            NedNLValidationError: If request validation fails (HTTP 400).
+            NedNLNotFoundError: If the resource is not found (HTTP 404).
+            NedNLClientError: For other client errors (HTTP 4xx).
+            NedNLServerError: If a server error occurs (HTTP 5xx).
             NedNLConnectionError: If an error occurs while connecting to the API.
             NedNLError: If an unexpected response is received from the API.
 
@@ -85,6 +174,7 @@ class NedNL:
             self.session = ClientSession()
             self._close_session = True
 
+        response_text: str
         try:
             async with asyncio.timeout(self.request_timeout):
                 response = await self.session.request(
@@ -94,30 +184,21 @@ class NedNL:
                     headers=headers,
                     ssl=True,
                 )
+                # Read response body before checking status
+                response_text = await response.text()
                 response.raise_for_status()
         except TimeoutError as exception:
             msg = "Timeout occurred while connecting to NED NL API."
-            raise NedNLConnectionError(msg) from exception
+            raise NedNLTimeoutError(msg) from exception
         except ClientResponseError as exception:
-            if exception.status == 403:
-                msg = "Invalid or expired API key provided."
-                raise NedNLAuthenticationError(msg) from exception
-            msg = "Error occurred while communicating with NED NL API."
-            raise NedNLConnectionError(msg) from exception
+            error_data = self._parse_error_response(response_text, exception.status)
+            self._handle_http_error(exception, error_data)
         except (ClientError, socket.gaierror) as exception:
             msg = "Error occurred while communicating with NED NL API."
             raise NedNLConnectionError(msg) from exception
 
-        content_type = response.headers.get("Content-Type", "")
-        text = await response.text()
-        if "application/ld+json" not in content_type:
-            msg = "Unexpected content type response from NED NL API."
-            raise NedNLError(
-                msg,
-                {"Content-Type": content_type, "Response": text},
-            )
-
-        return text
+        self._validate_content_type(response.headers.get("Content-Type", ""))
+        return response_text
 
     async def all_activities(self) -> list[Activity]:
         """Get list of all activities.

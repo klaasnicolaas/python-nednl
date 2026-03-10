@@ -10,8 +10,14 @@ from aresponses import Response, ResponsesMockServer
 
 from nednl import NedNL
 from nednl.exceptions import (
+    NedNLClientError,
     NedNLConnectionError,
     NedNLError,
+    NedNLNotFoundError,
+    NedNLRateLimitError,
+    NedNLServerError,
+    NedNLTimeoutError,
+    NedNLValidationError,
 )
 
 from . import load_fixtures
@@ -72,7 +78,7 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
 
     async with ClientSession() as session:
         client = NedNL(api_key="Key", session=session, request_timeout=0.1)
-        with pytest.raises(NedNLConnectionError):
+        with pytest.raises(NedNLTimeoutError):
             await client._request("test")
 
 
@@ -109,18 +115,55 @@ async def test_client_error() -> None:
             assert await client._request("test")
 
 
-async def test_status_404(
+@pytest.mark.parametrize(
+    ("status", "fixture", "exception"),
+    [
+        (400, "error_400.json", NedNLValidationError),
+        (404, "error_404.json", NedNLNotFoundError),
+        (418, None, NedNLClientError),
+        (429, "error_429.json", NedNLRateLimitError),
+        (500, "error_500.json", NedNLServerError),
+    ],
+)
+async def test_http_error_status(
+    aresponses: ResponsesMockServer,
+    nednl_client: NedNL,
+    status: int,
+    fixture: str | None,
+    exception: type[Exception],
+) -> None:
+    """Test HTTP error status handling."""
+    body = (
+        load_fixtures(fixture) if fixture else f'{{"message": "HTTP {status} error"}}'
+    )
+    aresponses.add(
+        "api.ned.nl",
+        "/v1/test",
+        "GET",
+        aresponses.Response(
+            status=status,
+            content_type="application/ld+json",
+            body=body,
+        ),
+    )
+    with pytest.raises(exception):
+        assert await nednl_client._request("test")
+
+
+async def test_invalid_json_error_response(
     aresponses: ResponsesMockServer,
     nednl_client: NedNL,
 ) -> None:
-    """Test response status 404 handling."""
+    """Test error response with invalid JSON."""
     aresponses.add(
         "api.ned.nl",
         "/v1/test",
         "GET",
         aresponses.Response(
             status=404,
+            content_type="application/ld+json",
+            body="This is not valid JSON",
         ),
     )
-    with pytest.raises(NedNLConnectionError):
+    with pytest.raises(NedNLNotFoundError):
         assert await nednl_client._request("test")

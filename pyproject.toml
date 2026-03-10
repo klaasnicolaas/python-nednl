@@ -106,6 +106,7 @@ good-names = ["_", "ex", "fp", "i", "id", "j", "k", "on", "Run", "T"]
 disable= [
   "duplicate-code",
   "format",
+  "no-else-return",
   "unsubscriptable-object",
 ]
 
