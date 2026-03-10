@@ -32,17 +32,28 @@ async def test_missing_api_key(aresponses: ResponsesMockServer) -> None:
             await client.all_points()
 
 
-async def test_status_403(
+@pytest.mark.parametrize(
+    ("status", "fixture"),
+    [
+        (401, "error_401.json"),
+        (403, "error_403.json"),
+    ],
+)
+async def test_authentication_error(
     aresponses: ResponsesMockServer,
     nednl_client: NedNL,
+    status: int,
+    fixture: str,
 ) -> None:
-    """Test response status 403 handling."""
+    """Test authentication error handling."""
     aresponses.add(
         "api.ned.nl",
         "/v1/test",
         "GET",
         aresponses.Response(
-            status=403,
+            status=status,
+            content_type="application/ld+json",
+            body=load_fixtures(fixture),
         ),
     )
     with pytest.raises(NedNLAuthenticationError):

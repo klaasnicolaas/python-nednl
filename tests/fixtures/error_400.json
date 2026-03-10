@@ -1,0 +1,6 @@
+{
+    "@context": "/v1/contexts/Error",
+    "@type": "hydra:Error",
+    "hydra:title": "An error occurred",
+    "hydra:description": "Invalid request parameters provided."
+}
