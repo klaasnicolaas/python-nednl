@@ -74,6 +74,7 @@ async def main() -> None:
         )
         print(response)
 
+
 if __name__ == "__main__":
     asyncio.run(main())
 ```
