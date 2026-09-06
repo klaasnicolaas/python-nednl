@@ -15,7 +15,6 @@ from mashumaro.mixins.orjson import DataClassORJSONMixin
 class NedDataMixin(DataClassDictMixin):
     """Mixin for dataclasses with a 'data' attribute."""
 
-    # pylint: disable-next=too-few-public-methods
     class Config(BaseConfig):
         """Configuration for mashumaro."""
 
