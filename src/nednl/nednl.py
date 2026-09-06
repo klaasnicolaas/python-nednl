@@ -41,7 +41,7 @@ from .models import (
     UtilizationsResponse,
 )
 
-VERSION = metadata.version(__package__)
+VERSION = metadata.version("nednl")
 
 
 @dataclass
@@ -266,7 +266,7 @@ class NedNL:
         response = await self._request("types", params={"itemsPerPage": 100})
         return TypesResponse.from_json(response).data
 
-    async def utilization(  # noqa: PLR0913, pylint: disable=too-many-arguments
+    async def utilization(  # noqa: PLR0913
         self,
         *,
         point_id: int,
