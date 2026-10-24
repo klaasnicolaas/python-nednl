@@ -9,7 +9,7 @@ from nednl import NedNL
 
 
 @pytest.fixture(name="nednl_client")
-async def client() -> AsyncGenerator[NedNL, None]:
+async def client() -> AsyncGenerator[NedNL]:
     """Create a National Energy Dashboard NL client."""
     async with (
         ClientSession() as session,
